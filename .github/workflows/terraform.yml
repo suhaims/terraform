@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     env:
-      ARM_CLIENT_ID: ${vars.AZ_CLIENT_ID}
-      ARM_CLIENT_SECRET: ${secrets.AZ_CLIENT_SECRET}
-      ARM_TENANT_ID: ${vars.AZ_TENANT_ID}
-      ARM_SUBSCRIPTION_ID: ${vars.AZ_SUBSCRIPTION_ID}
+      ARM_CLIENT_ID: ${{vars.AZ_CLIENT_ID}}
+      ARM_CLIENT_SECRET: ${{secrets.AZ_CLIENT_SECRET}}
+      ARM_TENANT_ID: ${{vars.AZ_TENANT_ID}}
+      ARM_SUBSCRIPTION_ID: ${{vars.AZ_SUBSCRIPTION_ID}}
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:

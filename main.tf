@@ -37,6 +37,6 @@ resource "azurerm_windows_web_app" "nordcloud_webapp" {
   service_plan_id     = azurerm_service_plan.nordcloud_asp.id
 
   site_config {
-
+    always_on = false
   }
 }

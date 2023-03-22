@@ -6,6 +6,9 @@ terraform {
     }
   }
 
+  backend "azurerm" {
+  }
+
   required_version = "=1.4.2"
 }
 
@@ -20,7 +23,7 @@ resource "azurerm_resource_group" "nordcloud_demo" {
 }
 
 resource "azurerm_service_plan" "nordcloud_asp" {
-  name                = "nordclouddemo-appplan"
+  name                = var.app_service_plan_name
   location            = azurerm_resource_group.nordcloud_demo.location
   resource_group_name = azurerm_resource_group.nordcloud_demo.name
   sku_name            = "F1"
@@ -28,7 +31,7 @@ resource "azurerm_service_plan" "nordcloud_asp" {
 }
 
 resource "azurerm_windows_web_app" "nordcloud_webapp" {
-  name                = "nordcloud-webapp"
+  name                = var.web_app_name
   location            = azurerm_resource_group.nordcloud_demo.location
   resource_group_name = azurerm_resource_group.nordcloud_demo.name
   service_plan_id     = azurerm_service_plan.nordcloud_asp.id

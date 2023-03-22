@@ -1,7 +1,11 @@
 variable "location" {
-  default = "westeurope"
 }
 
 variable "resource_group_name" {
-  default = "nordcloud_demo_rg"
+}
+
+variable "web_app_name" {
+}
+
+variable "app_service_plan_name" {
 }

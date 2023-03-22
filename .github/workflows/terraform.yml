@@ -35,7 +35,7 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init
+      run: terraform init -backend-config=resource_group_name:cloud-shell-storage-westeurope -backend-config=storage_account_name:csb1003200288944624 -backend-config=container_name:state -backend-config=key:state.tfstate
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
